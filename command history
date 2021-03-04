@@ -1,0 +1,707 @@
+[devops@localhost crazynflostats]$ mkdir 2018 2019 2020
+[devops@localhost crazynflostats]$ ll
+total 0
+drwxrwxr-x. 1 devops devops 0 Mar  3 20:06 2018
+drwxrwxr-x. 1 devops devops 0 Mar  3 20:06 2019
+drwxrwxr-x. 1 devops devops 0 Mar  3 20:06 2020
+[devops@localhost crazynflostats]$ man git-add
+[devops@localhost crazynflostats]$ git add --all
+[devops@localhost crazynflostats]$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+[devops@localhost crazynflostats]$ git add -A
+[devops@localhost crazynflostats]$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+[devops@localhost crazynflostats]$ git add --all .
+[devops@localhost crazynflostats]$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+[devops@localhost crazynflostats]$ git add 2018/
+[devops@localhost crazynflostats]$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+[devops@localhost crazynflostats]$ ll
+total 0
+drwxrwxr-x. 1 devops devops 0 Mar  3 20:06 2018
+drwxrwxr-x. 1 devops devops 0 Mar  3 20:06 2019
+drwxrwxr-x. 1 devops devops 0 Mar  3 20:06 2020
+[devops@localhost crazynflostats]$ ls -la
+total 0
+drwxrwxr-x. 1 devops devops 32 Mar  3 20:06 .
+drwxrwxr-x. 1 devops devops 28 Mar  3 20:04 ..
+drwxrwxr-x. 1 devops devops  0 Mar  3 20:06 2018
+drwxrwxr-x. 1 devops devops  0 Mar  3 20:06 2019
+drwxrwxr-x. 1 devops devops  0 Mar  3 20:06 2020
+drwxrwxr-x. 1 devops devops 98 Mar  3 20:09 .git
+[devops@localhost crazynflostats]$ cd .git/
+[devops@localhost .git]$ ll
+total 12
+drwxrwxr-x. 1 devops devops   0 Mar  3 19:43 branches
+-rw-rw-r--. 1 devops devops  92 Mar  3 19:43 config
+-rw-rw-r--. 1 devops devops  73 Mar  3 19:43 description
+-rw-rw-r--. 1 devops devops  23 Mar  3 19:43 HEAD
+drwxrwxr-x. 1 devops devops 460 Mar  3 19:43 hooks
+drwxrwxr-x. 1 devops devops  14 Mar  3 19:43 info
+drwxrwxr-x. 1 devops devops  16 Mar  3 19:43 objects
+drwxrwxr-x. 1 devops devops  18 Mar  3 19:43 refs
+[devops@localhost .git]$ vi objects
+[devops@localhost .git]$ cd ..
+[devops@localhost crazynflostats]$ rm -rf .git/
+[devops@localhost crazynflostats]$ git init
+Initialized empty Git repository in /home/devops/Repos/crazynflostats/.git/
+[devops@localhost crazynflostats]$ git add 2018/
+[devops@localhost crazynflostats]$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+[devops@localhost crazynflostats]$ git diff
+[devops@localhost crazynflostats]$ git log
+fatal: your current branch 'master' does not have any commits yet
+[devops@localhost crazynflostats]$ git checkout
+fatal: You are on a branch yet to be born
+[devops@localhost crazynflostats]$ rmdir 2018 2019 2020
+[devops@localhost crazynflostats]$ ll
+total 0
+[devops@localhost crazynflostats]$ ll
+total 0
+[devops@localhost crazynflostats]$ man git-remote
+[devops@localhost crazynflostats]$ man git-clone
+[devops@localhost crazynflostats]$ man git-remote
+[devops@localhost crazynflostats]$ git pull https://github.com/ctalaveraw/crazynflostats
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 12.39 KiB | 2.07 MiB/s, done.
+From https://github.com/ctalaveraw/crazynflostats
+ * branch            HEAD       -> FETCH_HEAD
+[devops@localhost crazynflostats]$ status
+bash: status: command not found
+[devops@localhost crazynflostats]$ git status
+On branch master
+nothing to commit, working tree clean
+[devops@localhost crazynflostats]$ git status
+On branch master
+nothing to commit, working tree clean
+[devops@localhost crazynflostats]$ git commit -m cloned from remote repo
+error: pathspec 'from' did not match any file(s) known to git
+error: pathspec 'remote' did not match any file(s) known to git
+error: pathspec 'repo' did not match any file(s) known to git
+[devops@localhost crazynflostats]$ git commit -m "cloned from remote repo"
+On branch master
+nothing to commit, working tree clean
+[devops@localhost crazynflostats]$ ll
+total 36
+-rw-rw-r--. 1 devops devops 35149 Mar  3 20:27 LICENSE
+[devops@localhost crazynflostats]$ cd ..
+[devops@localhost Repos]$ git branch -l
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+[devops@localhost Repos]$ ll
+total 0
+drwxrwxr-x. 1 devops devops 22 Mar  3 20:27 crazynflostats
+[devops@localhost Repos]$ cd crazynflostats/
+[devops@localhost crazynflostats]$ ll
+total 36
+-rw-rw-r--. 1 devops devops 35149 Mar  3 20:27 LICENSE
+[devops@localhost crazynflostats]$ git add LICENSE 
+[devops@localhost crazynflostats]$ git status
+On branch master
+nothing to commit, working tree clean
+[devops@localhost crazynflostats]$ git config --oneline
+error: unknown option `oneline'
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+[devops@localhost crazynflostats]$ git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+[devops@localhost crazynflostats]$ git config -l
+user.name=devops
+user.email=ctalaveraw@gmail.com
+core.editor=/usr/bin/vim/
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+[devops@localhost crazynflostats]$ ll
+total 36
+-rw-rw-r--. 1 devops devops 35149 Mar  3 20:27 LICENSE
+[devops@localhost crazynflostats]$ ls -la
+total 36
+drwxrwxr-x. 1 devops devops    22 Mar  3 20:27 .
+drwxrwxr-x. 1 devops devops    28 Mar  3 20:04 ..
+drwxrwxr-x. 1 devops devops   164 Mar  3 20:38 .git
+-rw-rw-r--. 1 devops devops 35149 Mar  3 20:27 LICENSE
+[devops@localhost crazynflostats]$ rm -rf .git/
+[devops@localhost crazynflostats]$ ll
+total 36
+-rw-rw-r--. 1 devops devops 35149 Mar  3 20:27 LICENSE
+[devops@localhost crazynflostats]$ rm LICENSE 
+[devops@localhost crazynflostats]$ ll
+total 0
+[devops@localhost crazynflostats]$ cd ..
+[devops@localhost Repos]$ ls -la
+total 0
+drwxrwxr-x. 1 devops devops  28 Mar  3 20:04 .
+drwx------. 1 devops devops 568 Mar  3 20:10 ..
+drwxrwxr-x. 1 devops devops   0 Mar  3 20:42 crazynflostats
+[devops@localhost Repos]$ git status
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+[devops@localhost Repos]$ cd crazynflostats/
+[devops@localhost crazynflostats]$ ll
+total 0
+[devops@localhost crazynflostats]$ ls -la
+total 0
+drwxrwxr-x. 1 devops devops  0 Mar  3 20:42 .
+drwxrwxr-x. 1 devops devops 28 Mar  3 20:04 ..
+[devops@localhost crazynflostats]$ git init
+Initialized empty Git repository in /home/devops/Repos/crazynflostats/.git/
+[devops@localhost crazynflostats]$ echo testfile >> text.txt
+[devops@localhost crazynflostats]$ git add text.txt 
+[devops@localhost crazynflostats]$ git commit -m "added test file"
+[master (root-commit) ff6770a] added test file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 text.txt
+[devops@localhost crazynflostats]$ git status
+On branch master
+nothing to commit, working tree clean
+[devops@localhost crazynflostats]$ git diff
+[devops@localhost crazynflostats]$ man git diff
+[devops@localhost crazynflostats]$ git merge origin master
+merge: origin - not something we can merge
+[devops@localhost crazynflostats]$ git commit
+On branch master
+nothing to commit, working tree clean
+[devops@localhost crazynflostats]$ git remote https://github.com/ctalaveraw/crazynflostats
+error: Unknown subcommand: https://github.com/ctalaveraw/crazynflostats
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+[devops@localhost crazynflostats]$ git remote add https://github.com/ctalaveraw/crazynflostats
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+[devops@localhost crazynflostats]$ git remote add -f -m crazynflostats  https://github.com/ctalaveraw/crazynflostats
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+[devops@localhost crazynflostats]$ git remote add -f -m crazynflostats https://github.com/ctalaveraw/crazynflostats
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+[devops@localhost crazynflostats]$ git remote add -f crazynflostats https://github.com/ctalaveraw/crazynflostats
+Updating crazynflostats
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 12.39 KiB | 1.38 MiB/s, done.
+From https://github.com/ctalaveraw/crazynflostats
+ * [new branch]      master     -> crazynflostats/master
+[devops@localhost crazynflostats]$ status
+bash: status: command not found
+[devops@localhost crazynflostats]$ git status
+On branch master
+nothing to commit, working tree clean
+[devops@localhost crazynflostats]$ git checkout -b master
+fatal: A branch named 'master' already exists.
+[devops@localhost crazynflostats]$ git branch
+* master
+[devops@localhost crazynflostats]$ git branch -r
+  crazynflostats/master
+[devops@localhost crazynflostats]$ git branch -a
+* master
+  remotes/crazynflostats/master
+[devops@localhost crazynflostats]$ git checkout -b master
+fatal: A branch named 'master' already exists.
+[devops@localhost crazynflostats]$ git branch 2018
+[devops@localhost crazynflostats]$ git branch 2019
+[devops@localhost crazynflostats]$ git branch 2020
+[devops@localhost crazynflostats]$ git branch -a
+  2018
+  2019
+  2020
+* master
+  remotes/crazynflostats/master
+[devops@localhost crazynflostats]$ git checkout master
+Already on 'master'
+[devops@localhost crazynflostats]$ git merge 2018
+Already up to date.
+[devops@localhost crazynflostats]$ git status
+On branch master
+nothing to commit, working tree clean
+[devops@localhost crazynflostats]$ git diff
+[devops@localhost crazynflostats]$ git branch 
+  2018
+  2019
+  2020
+* master
+[devops@localhost crazynflostats]$ git status
+On branch master
+nothing to commit, working tree clean
+[devops@localhost crazynflostats]$ git branch -d 2018
+Deleted branch 2018 (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d 2019
+Deleted branch 2019 (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d 2020
+Deleted branch 2020 (was ff6770a).
+[devops@localhost crazynflostats]$ git status
+On branch master
+nothing to commit, working tree clean
+[devops@localhost crazynflostats]$ git branch
+* master
+[devops@localhost crazynflostats]$ git branch stats
+[devops@localhost crazynflostats]$ git checkout stats
+Switched to branch 'stats'
+[devops@localhost crazynflostats]$ git branch 2018
+[devops@localhost crazynflostats]$ git branch 2019
+[devops@localhost crazynflostats]$ git branch 2020
+[devops@localhost crazynflostats]$ git branch
+  2018
+  2019
+  2020
+  master
+* stats
+[devops@localhost crazynflostats]$ git branch stats/2018
+fatal: cannot lock ref 'refs/heads/stats/2018': 'refs/heads/stats' exists; cannot create 'refs/heads/stats/2018'
+[devops@localhost crazynflostats]$ git branch -d stats 
+error: Cannot delete branch 'stats' checked out at '/home/devops/Repos/crazynflostats'
+[devops@localhost crazynflostats]$ git checkout master
+Switched to branch 'master'
+[devops@localhost crazynflostats]$ git branch -d stats 
+Deleted branch stats (was ff6770a).
+[devops@localhost crazynflostats]$ git branch stats/2018
+[devops@localhost crazynflostats]$ git status
+On branch master
+nothing to commit, working tree clean
+[devops@localhost crazynflostats]$ git branch
+  2018
+  2019
+  2020
+* master
+  stats/2018
+[devops@localhost crazynflostats]$ git branch -d stats/2018 
+Deleted branch stats/2018 (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d 2020
+Deleted branch 2020 (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d 20219
+error: branch '20219' not found.
+[devops@localhost crazynflostats]$ git branch -d 2019
+Deleted branch 2019 (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d 2018
+Deleted branch 2018 (was ff6770a).
+[devops@localhost crazynflostats]$ git branch
+* master
+[devops@localhost crazynflostats]$ git branch master/stats/2018
+fatal: cannot lock ref 'refs/heads/master/stats/2018': 'refs/heads/master' exists; cannot create 'refs/heads/master/stats/2018'
+[devops@localhost crazynflostats]$ git branch /stats/2018
+fatal: '/stats/2018' is not a valid branch name.
+[devops@localhost crazynflostats]$ git branch stats/2018
+[devops@localhost crazynflostats]$ git branch stats/2019
+[devops@localhost crazynflostats]$ git branch stats/2020
+[devops@localhost crazynflostats]$ git branch
+* master
+  stats/2018
+  stats/2019
+  stats/2020
+[devops@localhost crazynflostats]$ git branch stats/2020/season
+fatal: cannot lock ref 'refs/heads/stats/2020/season': 'refs/heads/stats/2020' exists; cannot create 'refs/heads/stats/2020/season'
+[devops@localhost crazynflostats]$ man git-branch
+[devops@localhost crazynflostats]$ git branch -f stats/2020/season
+fatal: cannot lock ref 'refs/heads/stats/2020/season': 'refs/heads/stats/2020' exists; cannot create 'refs/heads/stats/2020/season'
+[devops@localhost crazynflostats]$ man git-branch
+[devops@localhost crazynflostats]$ git branch -d stats/20
+stats/2018   stats/2019   stats/2020   
+[devops@localhost crazynflostats]$ git branch -d stats/2020
+Deleted branch stats/2020 (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d stats/2019
+Deleted branch stats/2019 (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d stats/2018
+Deleted branch stats/2018 (was ff6770a).
+[devops@localhost crazynflostats]$ git branch
+* master
+[devops@localhost crazynflostats]$ git branch season/2018/qb
+[devops@localhost crazynflostats]$ git branch season/2018/rb
+[devops@localhost crazynflostats]$ git branch season/2018/wr
+[devops@localhost crazynflostats]$ git branch season/2019/wr
+[devops@localhost crazynflostats]$ git branch season/2019/rb
+[devops@localhost crazynflostats]$ git branch season/2019/qb
+[devops@localhost crazynflostats]$ git branch season/2020/qb
+[devops@localhost crazynflostats]$ git branch season/2020/rb
+[devops@localhost crazynflostats]$ git branch season/2020/wr
+[devops@localhost crazynflostats]$ git branch
+* master
+  season/2018/qb
+  season/2018/rb
+  season/2018/wr
+  season/2019/qb
+  season/2019/rb
+  season/2019/wr
+  season/2020/qb
+  season/2020/rb
+  season/2020/wr
+[devops@localhost crazynflostats]$ git branch -a
+* master
+  season/2018/qb
+  season/2018/rb
+  season/2018/wr
+  season/2019/qb
+  season/2019/rb
+  season/2019/wr
+  season/2020/qb
+  season/2020/rb
+  season/2020/wr
+  remotes/crazynflostats/master
+[devops@localhost crazynflostats]$ git branch -d season
+error: branch 'season' not found.
+[devops@localhost crazynflostats]$ git branch -d season/2018/qb 
+Deleted branch season/2018/qb (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d season/2018/wr
+Deleted branch season/2018/wr (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d season/2018/rb
+Deleted branch season/2018/rb (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d season/2019/rb
+Deleted branch season/2019/rb (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d season/2019/qb
+Deleted branch season/2019/qb (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d season/2019/wr
+Deleted branch season/2019/wr (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d season/2020/wr
+Deleted branch season/2020/wr (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d season/2020/qb
+Deleted branch season/2020/qb (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -d season/2020/rb
+Deleted branch season/2020/rb (was ff6770a).
+[devops@localhost crazynflostats]$ git branch -a
+* master
+  remotes/crazynflostats/master
+[devops@localhost crazynflostats]$ git branch master/season/2018/qb
+fatal: cannot lock ref 'refs/heads/master/season/2018/qb': 'refs/heads/master' exists; cannot create 'refs/heads/master/season/2018/qb'
+[devops@localhost crazynflostats]$ git branch stats/season/2018
+[devops@localhost crazynflostats]$ git branch stats/season/2019
+[devops@localhost crazynflostats]$ git branch stats/season/2020
+[devops@localhost crazynflostats]$ git branch stats/postseason/2018
+[devops@localhost crazynflostats]$ git branch stats/postseason/2019
+[devops@localhost crazynflostats]$ git branch stats/postseason/2020
+[devops@localhost crazynflostats]$ git branch 
+* master
+  stats/postseason/2018
+  stats/postseason/2019
+  stats/postseason/2020
+  stats/season/2018
+  stats/season/2019
+  stats/season/2020
+[devops@localhost crazynflostats]$ ll
+total 4
+-rw-rw-r--. 1 devops devops 9 Mar  3 20:43 text.txt
+[devops@localhost crazynflostats]$ git remove text.txt
+git: 'remove' is not a git command. See 'git --help'.
+
+The most similar command is
+        remote
+[devops@localhost crazynflostats]$ git rm text.txt 
+rm 'text.txt'
+[devops@localhost crazynflostats]$ ll
+total 0
+[devops@localhost crazynflostats]$ git commit -m "added directory topology"
+[master aa1e778] added directory topology
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 text.txt
+[devops@localhost crazynflostats]$ git remote add origin git@github.com:ctalaveraw/crazynflostats.git
+[devops@localhost crazynflostats]$ git remote -a
+error: unknown switch `a'
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+[devops@localhost crazynflostats]$ git remote 
+crazynflostats
+origin
+[devops@localhost crazynflostats]$ git push origin master
+Warning: Permanently added the RSA host key for IP address '140.82.113.3' to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[devops@localhost crazynflostats]$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+[devops@localhost crazynflostats]$ git push --set-upstream origin master
+Warning: Permanently added the RSA host key for IP address '140.82.112.3' to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[devops@localhost crazynflostats]$ git remote add origin https://github.com/ctalaveraw/crazynflostats.git
+fatal: remote origin already exists.
+[devops@localhost crazynflostats]$ git push --set-upstream origin master
+Warning: Permanently added the RSA host key for IP address '140.82.112.4' to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[devops@localhost crazynflostats]$ git push --set-upstream origin master
+Warning: Permanently added the RSA host key for IP address '140.82.114.4' to the list of known hosts.                                                                                                                                                                                         
+git@github.com: Permission denied (publickey).                                                                                                                                                                                                                                                
+fatal: Could not read from remote repository.                                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                                                              
+Please make sure you have the correct access rights                                                                                                                                                                                                                                           
+and the repository exists.                                                                                                                                                                                                                                                                    
+[devops@localhost crazynflostats]$ git remote add origin https://github.com/ctalaveraw/crazynflostats.git
+fatal: remote origin already exists.                                                                                                                                                                                                                                                          
+[devops@localhost crazynflostats]$ git push --set-upstream origin master                                                                                                                                                    
+git@github.com: Permission denied (publickey).                                                                                                                                                                                                                                                
+fatal: Could not read from remote repository.                                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                                                              
+Please make sure you have the correct access rights                                                                                                                                                                                                                                           
+and the repository exists.                                                                                                                                                                                                                                                                    
+[devops@localhost crazynflostats]$ git-add -L                                                                                                                                                                                                                                                 
+bash: git-add: command not found                                                                                                                                                                                                                                                              
+[devops@localhost crazynflostats]$ ssh-add -L                                                                                                                                                                                                                                                 
+The agent has no identities.                                                                                                                                                                                                                                                                  
+[devops@localhost crazynflostats]$ ssh-add ~/.ssh/
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                                                                                                                                                                                                                   
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @                                                                                                                                                                                                                                   
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                                                                                                                                                                                                                   
+Permissions 0755 for '/home/devops/.ssh/' are too open.                                                                                                                                                                                                                                       
+It is required that your private key files are NOT accessible by others.                                                                                                                                                                                                                      
+This private key will be ignored.                                                                                                                                                                                                                                                             
+[devops@localhost crazynflostats]$ ssh-add ~/.ssh/gitssh
+Enter passphrase for /home/devops/.ssh/gitssh:                                                                                                                                                                                                                                                
+Identity added: /home/devops/.ssh/gitssh (ctalaveraw@gmail.com)                                                                                                                                                                                                                               
+[devops@localhost crazynflostats]$ ssh-add -L
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC9e5SrWsOrWqcX2VeKLI98BawH3oOgaSEprgsKzZkYbNdtUAeyviVOTl53xpKARIbAosuoi6YJlSuHy5a/z3Xre7WIPL/aXJHHhmxwliH3uGOsk96xw/ZhhSrhWlenf3i7VBUqYXreQgaW9wWfDcrsR1pYYORFAOtLNNA/7Epfm1KeZwJAMVJEnQuy4K7mIGfqSt52gaRpKRFswpbaqt0Xso/Ej2d/97C2ys0T+JcHl0wZAQoF06NEPvGvV6FUCW0gvsLhJEPC6udCcVVkcHA3Zp12wGW2GnAny8r5cAeykWBZaz1t46ePBfF8SJ6nxYr/DFBsvb4BVyDubvbHepuGWV7+6sWHzdfWN/RQI9qo7ywvr3SJIJEkIeg7FLo7K6ymJHDnn14FesjZKrEpAORB2kP1sigue4eYzE2EfHp9+cE6B1/9yrdLWJxFeb5yiPRIODlV+MTYKsS2QAM1WKAjg7rKphfOKSZnDs06LW0c1TOIy+YCph6z7ELiaPCfCKScDjSrWo3tUllOZ2DXPIZZhumQchjBkLpRhDvIqzqiu7yifgzle7pPub3TgwjrvDLBoGVqjFFhgbZKOBk1+ISK7D+Yx0Nbtj7T/u7pLnHkXvs7LsbnsstfgJYwCpGPRTPx5vU4R8w07tZ5Wjz3SuX7qHfFBWANNyEx+Iws5rt5JQ== ctalaveraw@gmail.com                                                                                                                 
+[devops@localhost crazynflostats]$ git push --set-upstream origin master
+                                                                                                                                                                                                                                                                                              
+                                                                                                                      
+To github.com:ctalaveraw/crazynflostats.git                                                                           
+ ! [rejected]        master -> master (non-fast-forward)                                                              
+error: failed to push some refs to 'github.com:ctalaveraw/crazynflostats.git'                                         
+hint: Updates were rejected because the tip of your current branch is behind                                          
+hint: its remote counterpart. Integrate the remote changes (e.g.                                                      
+hint: 'git pull ...') before pushing again.                                                                           
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.                                            
+[devops@localhost crazynflostats]$                                                                                    
+[devops@localhost crazynflostats]$                                                                                    
+[devops@localhost crazynflostats]$ man git-pull
+[devops@localhost crazynflostats]$ man git-pull                                                                       
+[devops@localhost crazynflostats]$ git pull https://github.com/ctalaveraw/crazynflostats
+warning: Pulling without specifying how to reconcile divergent branches is                                            
+discouraged. You can squelch this message by running one of the following                                             
+commands sometime before your next pull:                                                                              
+                                                                                                                      
+  git config pull.rebase false  # merge (the default strategy)                                                        
+  git config pull.rebase true   # rebase                                                                              
+  git config pull.ff only       # fast-forward only                                                                   
+                                                                                                                      
+You can replace "git config" with "git config --global" to set a default                                              
+preference for all repositories. You can also pass --rebase, --no-rebase,                                             
+or --ff-only on the command line to override the configured default per                                               
+invocation.                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                              
+From https://github.com/ctalaveraw/crazynflostats                                                                                                                                                                                                                                             
+ * branch            HEAD       -> FETCH_HEAD                                                                                                                                                                                                                                                 
+fatal: refusing to merge unrelated histories                                                                                                                                                                                                                                                  
+[devops@localhost crazynflostats]$ git push --set-upstream origin master
+To github.com:ctalaveraw/crazynflostats.git                                                                                                                                                                                                                                                   
+ ! [rejected]        master -> master (non-fast-forward)                                                                                                                                                                                                                                      
+error: failed to push some refs to 'github.com:ctalaveraw/crazynflostats.git'                                                                                                                                                                                                                 
+hint: Updates were rejected because the tip of your current branch is behind                                                                                                                                                                                                                  
+hint: its remote counterpart. Integrate the remote changes (e.g.                                                                                                                                                                                                                              
+hint: 'git pull ...') before pushing again.                                                                                                                                                                                                                                                   
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.                                                                                                                                                                                                                    
+[devops@localhost crazynflostats]$ git push --force  --set-upstream origin master                                                                                                                                                                                                             
+Enumerating objects: 5, done.                                                                                                                                                                                                                                                                 
+Counting objects: 100% (5/5), done.                                                                                                                                                                                                                                                           
+Delta compression using up to 2 threads                                                                                                                                                                                                                                                       
+Compressing objects: 100% (2/2), done.                                                                                                                                                                                                                                                        
+Writing objects: 100% (5/5), 386 bytes | 386.00 KiB/s, done.                                                                                                                                                                                                                                  
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0                                                                                                                                                                                                                                          
+To github.com:ctalaveraw/crazynflostats.git                                                                                                                                                                                                                                                   
+ + 6715ab5...aa1e778 master -> master (forced update)                                                                                                                                                                                                                                         
+Branch 'master' set up to track remote branch 'master' from 'origin'.                                                                                                                                                                                                                         
+[devops@localhost crazynflostats]$ git push
+Everything up-to-date                                                                                                                                                                                                                                                                         
+[devops@localhost crazynflostats]$ git push --all -u
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:ctalaveraw/crazynflostats.git
+ * [new branch]      stats/postseason/2018 -> stats/postseason/2018
+ * [new branch]      stats/postseason/2019 -> stats/postseason/2019
+ * [new branch]      stats/postseason/2020 -> stats/postseason/2020
+ * [new branch]      stats/season/2018 -> stats/season/2018
+ * [new branch]      stats/season/2019 -> stats/season/2019
+ * [new branch]      stats/season/2020 -> stats/season/2020
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+Branch 'stats/postseason/2018' set up to track remote branch 'stats/postseason/2018' from 'origin'.
+Branch 'stats/postseason/2019' set up to track remote branch 'stats/postseason/2019' from 'origin'.
+Branch 'stats/postseason/2020' set up to track remote branch 'stats/postseason/2020' from 'origin'.
+Branch 'stats/season/2018' set up to track remote branch 'stats/season/2018' from 'origin'.
+Branch 'stats/season/2019' set up to track remote branch 'stats/season/2019' from 'origin'.
+Branch 'stats/season/2020' set up to track remote branch 'stats/season/2020' from 'origin'.
+
